@@ -8,15 +8,28 @@ bool isPresent(vector<string> &words, string s) {
 	return false;
 }
 
-bool wordBreak(vector<string> &words, string str) {
+bool solve(vector<string> &words, string str, unordered_map<string, int> &dp) {
+	int n = str.length();
+	if (n == 0) {
+		return true;
+	}
 
-	if (str.length() == 0)return true;
-	for (int i = 1; i <= str.length(); i++) {
-		if (isPresent(words, str.substr(0, i)) and wordBreak(words, str.substr(i, str.length() - i))) {
-			return true;
+	if (dp[str]) return true;
+
+	for (int i = 1; i <= n; i++) {
+		if (isPresent(words, str.substr(0, i)) and solve(words, str.substr(i, n - i), dp)) {
+			dp[str] = 1;
+			return dp[str];
 		}
 	}
+	dp[str] = 0;
 	return false;
+}
+
+bool wordBreak(vector<string> &words, string str) {
+
+	unordered_map<string, int> dp;
+	return solve(words, str, dp);
 }
 
 int main() {

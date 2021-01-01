@@ -1,1 +1,7 @@
-HELLO WORLD
+6
+aaa
+bbb
+ccc
+bbb
+aaa
+aaa
