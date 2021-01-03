@@ -29,9 +29,9 @@ int kthSmallest(vector<int>&arr, int s, int e, int k) {
 	if (k > 0 and (e - s + 1) >= k) {
 		int p = partition(arr, s, e);
 
-		if (p - s == k - 1) return arr[p];
+		if (p - s + 1 == k) return arr[p];
 
-		if (p - s > k - 1) {
+		if (p - s + 1 > k) {
 			return kthSmallest(arr, s, p - 1, k);
 		}
 

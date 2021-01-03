@@ -2,7 +2,7 @@
 using namespace std;
 
 int getMinDiff(vector<int> &arr, int n, int k) {
-	// two pointer approach
+	// two pointer approach and sliding window approach
 
 	vector<pair<int, int>> a;
 	vector<int> taken(n, 0);

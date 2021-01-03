@@ -1,7 +1,2 @@
-6
-aaa
-bbb
-ccc
-bbb
-aaa
-aaa
+aab
+xyz
